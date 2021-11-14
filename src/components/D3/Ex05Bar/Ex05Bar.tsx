@@ -44,6 +44,17 @@ const Ex05Bar = () /* or ( props : IEx05BarProps ) */ => {
       .attr('height', (d: number) => d*4)
       .attr('fill', (d: number) => colorPicker(d))
 
+    svg.selectAll('text')
+      .data(dataset)
+      .enter()
+      .append('text')
+      .text((d) => d)
+      .attr('x', (d, i: number) => i * (w / dataset.length) + (w / dataset.length - padding) / 4)
+      .attr('y', (d: number) => h - (d*4)+12)
+      .attr('font-family', 'sans-serif')
+      .attr('font-size', 12)
+      .attr('fill', '#fff')
+
   }
   return (
     <div className="learnD3 Ex05Bar" ref={ref} />
