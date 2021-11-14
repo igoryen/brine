@@ -7,6 +7,11 @@
   pointer-events: none;
 }
 
+.learnD3 {
+  border: 1px dashed #aaa;
+  margin: 0.5em 0;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

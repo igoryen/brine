@@ -9,12 +9,11 @@ $ npx generate-react-cli component Ex01Bar --type=d3
 
 */
 
-import React, { useState, useEffect, RefObject } from 'react'
+import React, { useEffect, RefObject } from 'react'
 import './Ex01Bar.scss'
 import * as d3 from 'd3' // yarn add d3 @types/d3
 
 const Ex01Bar = () /* or ( props : IEx01BarProps ) */ => {
-  const [myState, setMyState] = useState<Boolean>(true)
   const ref: RefObject<HTMLDivElement> = React.createRef()
 
   useEffect(() => {
@@ -44,7 +43,7 @@ const Ex01Bar = () /* or ( props : IEx01BarProps ) */ => {
   }
 
   return (
-    <div className="Ex01Bar" ref={ref} />
+    <div className="learnD3 Ex01Bar" ref={ref} />
   )
 }
 

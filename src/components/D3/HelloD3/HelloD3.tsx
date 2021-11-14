@@ -9,12 +9,11 @@ $ npx generate-react-cli component HelloD3 --type=d3
 
 */
 
-import React, { useState, useEffect, RefObject } from 'react'
+import React, { useEffect, RefObject } from 'react'
 import './HelloD3.scss'
 import * as d3 from 'd3' // yarn add d3 @types/d3
 
 const HelloD3 = () /* or ( props : IHelloD3Props ) */ => {
-  const [myState, setMyState] = useState<Boolean>(true)
   const ref: RefObject<HTMLDivElement> = React.createRef()
 
   useEffect(() => {
@@ -32,7 +31,7 @@ const HelloD3 = () /* or ( props : IHelloD3Props ) */ => {
   }
 
   return (
-    <div className="HelloD3" ref={ref}>
+    <div className="learn D3 HelloD3" ref={ref}>
       <svg width="500" height="500">
         <g transform="translate(0, 0)">
           <rect width="500" height="500" fill="green" />

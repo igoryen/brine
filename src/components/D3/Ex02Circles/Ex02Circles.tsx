@@ -9,12 +9,11 @@ $ npx generate-react-cli component Ex02Circles --type=d3
 
 */
 
-import React, { useState, useEffect, RefObject } from 'react'
+import React, { useEffect, RefObject } from 'react'
 import './Ex02Circles.scss'
 import * as d3 from 'd3' // yarn add d3 @types/d3
 
 const Ex02Circles = () /* or ( props : IEx02CirclesProps ) */ => {
-  const [myState, setMyState] = useState<Boolean>(true)
   const ref: RefObject<HTMLDivElement> = React.createRef()
 
   useEffect(() => {
@@ -22,23 +21,21 @@ const Ex02Circles = () /* or ( props : IEx02CirclesProps ) */ => {
   })
 
   const draw = () => {
-    d3.select(ref.current).append('p').text('Hello World')
-    d3.select('svg')
-      .append('g')
-      .attr('transform', 'translate(250, 0)')
-      .append('rect').attr('width', 500)
-      .attr('height', 500)
-      .attr('fill', 'tomato')
+
+    const width = 200;
+    const height = 200;
+    d3.select(ref.current).append('svg')
+      .attr('width', width)
+      .attr('height', height)
+      .append('circle')
+      .attr('cx', 50)
+      .attr('cy', 50)
+      .attr('r', 25)
+      .style('fill', 'purple') // string "pee-you-ar-pee-el-ee", not 'purple'
   }
 
   return (
-    <div className="Ex02Circles" ref={ref}>
-      <svg width="500" height="500">
-        <g transform="translate(0, 0)">
-          <rect width="500" height="500" fill="green" />
-        </g>
-      </svg>
-    </div>
+    <div className="learnD3 Ex02Circles" ref={ref} />
   )
 }
 
