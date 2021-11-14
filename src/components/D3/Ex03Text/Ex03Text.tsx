@@ -26,18 +26,17 @@ const Ex03Text = () /* or ( props : IEx03TextProps ) */ => {
   })
 
   const draw = () => {
-    d3.select(ref.current).append('p').text('Hello World')
-    d3.select('svg').append('g').attr('transform', 'translate(250, 0)').append('rect').attr('width', 500).attr('height', 500).attr('fill', 'tomato')
+    d3.select(ref.current).append('svg')
+      .attr('width', 250)
+      .attr('height', 50)
+      .append('text')
+      .text('Easy-peasy')
+      .attr('y', 25)
+      .attr('x', 0)
   }
 
   return (
-    <div className="Ex03Text" ref={ref}>
-      <svg width="500" height="500">
-        <g transform="translate(0, 0)">
-          <rect width="500" height="500" fill="green" />
-        </g>
-      </svg>
-    </div>
+    <div className="learnD3 Ex03Text" ref={ref} />
   )
 }
 
