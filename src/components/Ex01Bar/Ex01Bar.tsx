@@ -22,23 +22,29 @@ const Ex01Bar = () /* or ( props : IEx01BarProps ) */ => {
   })
 
   const draw = () => {
-    d3.select(ref.current).append('p').text('Hello World')
-    d3.select('svg')
-      .append('g')
-      .attr('transform', 'translate(250, 0)')
-      .append('rect').attr('width', 500)
-      .attr('height', 500)
-      .attr('fill', 'tomato')
+
+    const width = 100;
+    const height = 100;
+    const padding = 2;
+    const dataset = [ 5, 10, 15, 20, 25];
+
+    const svg = d3.select(ref.current).append('svg')
+      .attr('width', width)
+      .attr('height', height);
+
+    svg.selectAll("rect")
+      .data(dataset)
+      .enter()
+      .append('rect')
+      .attr('x', (d, i) => i * (width / dataset.length))
+      .attr('d', (d) => height - (d*4))
+      .attr('width', width / dataset.length - padding)
+      .attr('height', (d) => d*4);
+
   }
 
   return (
-    <div className="Ex01Bar" ref={ref}>
-      <svg width="500" height="500">
-        <g transform="translate(0, 0)">
-          <rect width="500" height="500" fill="green" />
-        </g>
-      </svg>
-    </div>
+    <div className="Ex01Bar" ref={ref} />
   )
 }
 
