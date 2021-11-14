@@ -24,7 +24,24 @@ const Ex04Bar = () /* or ( props : IEx04BarProps ) */ => {
   })
 
   const draw = () => {
-   
+    const w = 300;
+    const h = 100;
+    const padding = 2;
+    const dataset = [5, 10, 14, 20, 25];
+
+    const svg = d3.select(ref.current).append('svg').attr('width', w).attr('height', h);
+
+    const colorPicker = (value: number) => (value <= 20) ? '#666666' : '#ff0033';
+
+    svg.selectAll('rect')
+      .data(dataset)
+      .enter()
+      .append('rect')
+      .attr('x', (d, i) => i * (w / dataset.length))
+      .attr('y', (d) => h - (d*4))
+      .attr('width', w / dataset.length - padding)
+      .attr('height', (d) => d*4)
+      .attr('fill', (d) => colorPicker(d))
   }
 
   return (

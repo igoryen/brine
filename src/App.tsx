@@ -9,10 +9,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Ex01Bar />
-        <Ex02Circles />
-        <Ex03Text />
         <Ex04Bar />
+        <Ex03Text />
+        <Ex02Circles />
+        <Ex01Bar />
       </header>
     </div>
   )
