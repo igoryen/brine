@@ -7,20 +7,35 @@ const Sec02Basics = () => (
   </div>
 )
 
-const person: {
-  name: string;
-  age: number;
-  hobbies: string[];
-  role: [number, string];
-} = {
+// const person: {
+//   name: string;
+//   age: number;
+//   hobbies: string[];
+//   role: [number, string];
+// } = {
+//   name: "Igor",
+//   age: 40,
+//   hobbies: ['Sports', 'Cooking'],
+//   role: [2, 'author'] // a tuple (2 elements)
+// };
+
+const ADMIN = 0;
+const READ_ONLY = 1;
+const AUTHOR = 2;
+
+const person = {
   name: "Igor",
   age: 40,
   hobbies: ['Sports', 'Cooking'],
-  role: [2, 'author'] // a tuple (2 elements)
+  role: ADMIN
 };
 
-person.role.push('admin'); // 1, 2
+// person.role.push('admin'); // 1, 2, 3
 // person.role[1] = 10; // 1, 3
+
+if(person.role === ADMIN) {
+  console.log('is admin');
+}
 
 let favouriteActivities: string[];
 
