@@ -25,6 +25,16 @@ const Sec02Basics = () => (
 
 enum Role { ADMIN = 'ADMIN', READ_ONLY = 100, AUTHOR = 200 }; // 4
 
+
+function add(n1: number, n2: number, showResult: boolean, phrase: string) {
+  const result = n1 + n2;
+  return showResult ? console.log("...", phrase + result) : result;
+}
+
+console.log("... add()", add(1, 2, true, "voila "));
+
+// =============================
+
 const person = {
   name: "Igor",
   age: 40,
@@ -35,7 +45,7 @@ const person = {
 // person.role.push('admin'); // 1, 2, 3
 // person.role[1] = 10; // 1, 3
 
-if(person.role === Role.ADMIN) {
+if (person.role === Role.ADMIN) {
   console.log('is admin');
 }
 
