@@ -22,16 +22,23 @@ const Ex02Circles = () /* or ( props : IEx02CirclesProps ) */ => {
 
   const draw = () => {
 
-    const width = 200;
-    const height = 200;
-    d3.select(ref.current).append('svg')
+    const width = 400;
+    const height = 400;
+
+    const data = [25, 20, 10, 12, 15];
+
+    const svg = d3.select(ref.current).append('svg')
       .attr('width', width)
-      .attr('height', height)
-      .append('circle')
-      .attr('cx', 50)
+      .attr('height', height);
+
+    const circles = svg.selectAll('circle')
+      .data(data);
+
+    circles.enter().append('circle')
+      .attr('cx', (datum, index) => (index * 50) + 50)
       .attr('cy', 50)
-      .attr('r', 25)
-      .style('fill', 'purple') // string "pee-you-ar-pee-el-ee", not 'purple'
+      .attr('r', datum => datum)
+      .style('fill', '#ffb3e6')
   }
 
   return (
