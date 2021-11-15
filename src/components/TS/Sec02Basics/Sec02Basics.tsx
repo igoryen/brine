@@ -23,7 +23,7 @@ const Sec02Basics = () => (
 // const READ_ONLY = 1;
 // const AUTHOR = 2;
 
-enum Role { ADMIN = 5, READ_ONLY, AUTHOR}; // 4
+enum Role { ADMIN = 5, READ_ONLY = 100, AUTHOR = 200 }; // 4
 
 const person = {
   name: "Igor",
@@ -50,5 +50,5 @@ export default Sec02Basics;
  * 1. no TS complaint
  * 2. no TS complaints, sadly
  * 3. TS complains, won't compile
- * 4. ADMIN is 5, READ_ONLY is 6, AUTHOR is 7
+ * 4. ADMIN is 5, READ_ONLY is 100, AUTHOR is 200
  */
