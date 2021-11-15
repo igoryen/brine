@@ -26,15 +26,21 @@ const Sec02Basics = () => (
 enum Role { ADMIN = 'ADMIN', READ_ONLY = 100, AUTHOR = 200 }; // 4
 
 
-function combine(input1: number, input2: number) { // 5
-  const result = input1 + input2;
+function combine(input1: number | string, input2: number | string) { // 5
+  let result;
+  if (typeof input1 === 'number' && typeof input2 === 'number') {
+    result = input1 + input2;
+  } else {
+    result = input1.toString() + input2.toString();
+  }
   return result;
 }
 
-// const combinedAges = combine(30, 26); // 6
-// console.log(combinedAges);
+const combinedAges = combine(30, 26); // 6
+console.log(combinedAges);
 
-// const combinedNames = combine('Max', 'Anna'); // 6
+const combinedNames = combine('Max', 'Anna'); // 6
+console.log(combinedNames);
 
 // =============================
 
@@ -64,6 +70,6 @@ export default Sec02Basics;
  * 2. no TS complaints, sadly
  * 3. TS complains, won't compile
  * 4. ADMIN is 'ADMIN', READ_ONLY is 100, AUTHOR is 200
- * 5. how to make combine() flexible, so it can work with both numbers and strings?
+ * 5. input1: number | string >>> this is called Union
  * 6. how to add flexibility so that it accepts data of various types?
  */
