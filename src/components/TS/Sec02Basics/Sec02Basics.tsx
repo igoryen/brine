@@ -54,6 +54,16 @@ type User = { name: string; age: number };
 const u1: User = { name: 'Max', age: 30 }; // this works!
 console.log("u1:", u1);
 
+
+function greet(user: { name: string; age: number }) {
+  console.log(`Hi, I am ${  user.name}`);
+}
+ 
+function isOlder(user: { name: string; age: number }, checkAge: number) {
+  return checkAge > user.age;
+}
+console.log('isOlder():', isOlder({ name: 'Igor', age: 46 }, 44));
+
 // =============================
 
 const person = {
