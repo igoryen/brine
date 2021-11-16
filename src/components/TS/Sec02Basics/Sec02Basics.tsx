@@ -50,6 +50,10 @@ console.log("combinedStringAges", combinedStringAges);
 const combinedNames = combine('Max', 'Anna', 'as-string'); // 6
 console.log("combinedNames", combinedNames);
 
+type User = { name: string; age: number };
+const u1: User = { name: 'Max', age: 30 }; // this works!
+console.log("u1:", u1);
+
 // =============================
 
 const person = {
