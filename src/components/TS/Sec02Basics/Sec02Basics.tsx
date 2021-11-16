@@ -25,11 +25,13 @@ const Sec02Basics = () => (
 
 enum Role { ADMIN = 'ADMIN', READ_ONLY = 100, AUTHOR = 200 }; // 4
 
+type ClusterA = number | string; // 9
+type ClusterB = 'as-number' | 'as-string'; // 9
 
 function combine(
-  input1: number | string,
-  input2: number | string,
-  resultTypeConversion: 'as-number' | 'as-string') { // 5
+  input1: ClusterA,
+  input2: ClusterA,
+  resultTypeConversion: ClusterB) { // 5
   let result;
   if (typeof input1 === 'number' && typeof input2 === 'number' || resultTypeConversion === 'as-number') {
     result = +input1 + +input2; // 8
@@ -81,4 +83,5 @@ export default Sec02Basics;
  * 6. how to add flexibility so that it accepts data of various types?
  * 7. convert the type of data from type 'string' to type 'number'
  * 8. the plus sign casts to type 'number'
+ * 9. This is a type 'alias' using type 'union'
  */
