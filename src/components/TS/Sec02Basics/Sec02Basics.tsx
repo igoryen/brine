@@ -31,12 +31,12 @@ function combine(
   input2: number | string,
   resultTypeConversion: string) { // 5
   let result;
-  if (typeof input1 === 'number' && typeof input2 === 'number') {
-    result = input1 + input2;
+  if (typeof input1 === 'number' && typeof input2 === 'number' || resultTypeConversion === 'as-number') {
+    result = +input1 + +input2; // 8
   } else {
     result = input1.toString() + input2.toString();
   }
-  return resultTypeConversion === 'as-number' ? +result : result.toString(); // 8
+  return result;
 }
 
 const combinedAges = combine(30, 26, 'as-number'); // 6
