@@ -60,7 +60,7 @@ type Guest = { name: string; age: number };
 function greet(user: Guest) {
   console.log(`Hi, I am ${  user.name}`);
 }
-greet({name:'Igor', age: 46});
+greet({ name:'Igor', age: 46 });
 
 function isOlder(user: Guest, checkAge: number) {
   return checkAge > user.age;
@@ -83,7 +83,7 @@ if (person.role === Role.ADMIN) {
   console.log('is admin');
 }
 
-let favouriteActivities: string[];
+// let favouriteActivities: string[];
 
 console.log(person.name);
 console.log(person)

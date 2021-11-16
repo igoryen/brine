@@ -51,7 +51,7 @@ const Ex07Scatterplot = () /* or ( props : IEx07ScatterplotProps ) */ => {
       .attr('height', h);
 
     // add dots
-    const dots = svg.selectAll("circle")
+    svg.selectAll("circle")
       .data(monthlyResults)
       .enter()
       .append("circle")

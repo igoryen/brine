@@ -11,7 +11,7 @@ $ npx generate-react-cli component Ex02Circles --type=d3
 
 import React, { useEffect, RefObject } from 'react'
 import './Ex02Circles.scss'
-import * as d3 from 'd3' // yarn add d3 @types/d3
+// import * as d3 from 'd3' // yarn add d3 @types/d3
 
 const Ex02Circles = () /* or ( props : IEx02CirclesProps ) */ => {
   const ref: RefObject<HTMLDivElement> = React.createRef()
