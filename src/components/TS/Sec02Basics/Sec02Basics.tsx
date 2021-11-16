@@ -29,7 +29,7 @@ enum Role { ADMIN = 'ADMIN', READ_ONLY = 100, AUTHOR = 200 }; // 4
 function combine(
   input1: number | string,
   input2: number | string,
-  resultTypeConversion: string) { // 5
+  resultTypeConversion: 'as-number' | 'as-string') { // 5
   let result;
   if (typeof input1 === 'number' && typeof input2 === 'number' || resultTypeConversion === 'as-number') {
     result = +input1 + +input2; // 8
@@ -76,7 +76,8 @@ export default Sec02Basics;
  * 2. no TS complaints, sadly
  * 3. TS complains, won't compile
  * 4. ADMIN is 'ADMIN', READ_ONLY is 100, AUTHOR is 200
- * 5. added parameter C to force type casting
+ * 5. added parameter C to force type casting to specifically 2 possible types.
+ *    Combination of type 'union' and type 'literal'
  * 6. how to add flexibility so that it accepts data of various types?
  * 7. convert the type of data from type 'string' to type 'number'
  * 8. the plus sign casts to type 'number'
