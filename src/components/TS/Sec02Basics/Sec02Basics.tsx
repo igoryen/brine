@@ -26,21 +26,27 @@ const Sec02Basics = () => (
 enum Role { ADMIN = 'ADMIN', READ_ONLY = 100, AUTHOR = 200 }; // 4
 
 
-function combine(input1: number | string, input2: number | string) { // 5
+function combine(
+  input1: number | string,
+  input2: number | string,
+  resultTypeConversion: string) { // 5
   let result;
   if (typeof input1 === 'number' && typeof input2 === 'number') {
     result = input1 + input2;
   } else {
     result = input1.toString() + input2.toString();
   }
-  return result;
+  return resultTypeConversion === 'as-number' ? +result : result.toString(); // 8
 }
 
-const combinedAges = combine(30, 26); // 6
-console.log(combinedAges);
+const combinedAges = combine(30, 26, 'as-number'); // 6
+console.log("combinedAges", combinedAges);
 
-const combinedNames = combine('Max', 'Anna'); // 6
-console.log(combinedNames);
+const combinedStringAges = combine('30', '26', 'as-number'); // 7
+console.log("combinedStringAges", combinedStringAges);
+
+const combinedNames = combine('Max', 'Anna', 'as-string'); // 6
+console.log("combinedNames", combinedNames);
 
 // =============================
 
@@ -70,6 +76,8 @@ export default Sec02Basics;
  * 2. no TS complaints, sadly
  * 3. TS complains, won't compile
  * 4. ADMIN is 'ADMIN', READ_ONLY is 100, AUTHOR is 200
- * 5. input1: number | string >>> this is called Union
+ * 5. added parameter C to force type casting
  * 6. how to add flexibility so that it accepts data of various types?
+ * 7. convert the type of data from type 'string' to type 'number'
+ * 8. the plus sign casts to type 'number'
  */
