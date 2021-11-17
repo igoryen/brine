@@ -10,23 +10,24 @@ const Sec02Basics = () => (
 function add(n1: number, n2: number) {
   return n1 + n2;
 }
-console.log("add():", add(1,2));
+console.log("add():", add(1, 2));
 
 function printResult(num: number): void { // 10
-  console.log(`Result: ${ num }`);
+  console.log(`Result: ${num}`);
 }
 
 printResult(add(5, 12));
 
-let combineValues: Function = () => {}; // 11
-combineValues = add;
-console.log("combineValues():", combineValues(8, 8));
+// let combineValues: (a: number, b: number) => number; // 11
+// combineValues = add;
+// console.log("combineValues():", combineValues(8, 8));
 
 /**
  * 10. This function has no return statement.
  *     Therefore, the type of its return is 'void' which it'd rather specify as ': void'.
  *     Although the return value of this function is 'undefined'.
- * 11. Specify type 'Function' and initialize.
+ * 11. Specifying that the value is a function that takes 2 params of type 'number' 
+ *     and returns data of type 'number'.
  */
 // =========================
 
@@ -81,9 +82,9 @@ console.log("u1:", u1);
 type Guest = { name: string; age: number };
 
 function greet(user: Guest) {
-  console.log(`Hi, I am ${  user.name}`);
+  console.log(`Hi, I am ${user.name}`);
 }
-greet({ name:'Igor', age: 46 });
+greet({ name: 'Igor', age: 46 });
 
 function isOlder(user: Guest, checkAge: number) {
   return checkAge > user.age;
