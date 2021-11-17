@@ -16,13 +16,7 @@ function printResult(num: number): void { // 10
   console.log(`Result: ${num}`);
 }
 
-
-
-
 printResult(add(5, 12));
-
-
-
 
 // let combineValues: (a: number, b: number) => number; // 11
 // combineValues = add;
