@@ -16,11 +16,28 @@ function printResult(num: number): void { // 10
   console.log(`Result: ${num}`);
 }
 
+
+
+
 printResult(add(5, 12));
+
+
+
 
 // let combineValues: (a: number, b: number) => number; // 11
 // combineValues = add;
 // console.log("combineValues():", combineValues(8, 8));
+
+function addAndHandle(n1: number, n2: number, cb: (num) => void) {
+  const result = n1 + n2;
+  cb(result)
+}
+
+addAndHandle(10, 20, (result) => {
+  console.log('in addAndHandle()', result);
+  return result; // 13
+}); // 12
+
 
 /**
  * 10. This function has no return statement.
@@ -28,6 +45,9 @@ printResult(add(5, 12));
  *     Although the return value of this function is 'undefined'.
  * 11. Specifying that the value is a function that takes 2 params of type 'number' 
  *     and returns data of type 'number'.
+ * 12. Param C '() => {}' is anonymous function.
+ * 13. Function definition defined that the type of the return value is void,
+ *     yet TS doesn't complain that a return statement exists.
  */
 // =========================
 
