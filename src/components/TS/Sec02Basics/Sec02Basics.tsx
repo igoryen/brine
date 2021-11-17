@@ -7,10 +7,18 @@ const Sec02Basics = () => (
   </div>
 )
 
-let userInput: unknown;
+let userInput: unknown; // 14
+let userName: string;
 userInput = 5;
 userInput = 'Max';
+if (typeof userInput === 'string') {
+  userName = userInput;
+  console.log('userName:', userName);
+}
 
+/**
+ * 14. 'unknown' means 'any value'. It's better than 'any' because type 'any' is too lax.
+ */
 
 // ========================
 
