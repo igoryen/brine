@@ -16,8 +16,17 @@ if (typeof userInput === 'string') {
   console.log('userName:', userName);
 }
 
+function generateError(message: string): never { // 15
+  throw new Error(message);
+}
+
+generateError('Hello, I am an error! And I am uncaught!'); // 15
 /**
  * 14. 'unknown' means 'any value'. It's better than 'any' because type 'any' is too lax.
+ * 15. This function throws an error and completely thrashes the code.
+ *     Its return value is not just 'void', it's 'never'.
+ *     I.e. if logged out, it won't even show 'undefined'.
+ *     For code quality, it's best to specify the return type as 'never'.
  */
 
 // ========================
