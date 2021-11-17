@@ -7,14 +7,21 @@ const Sec02Basics = () => (
   </div>
 )
 
-function add(n1: number, n2: number): number { // 10
+function add(n1: number, n2: number) {
   return n1 + n2;
 }
 console.log("add():", add(1,2));
 
+function printResult(num: number): void { // 10
+  console.log(`Result: ${ num }`);
+}
+
+printResult(add(5, 12));
+
 /**
- * 10. indicate the type of the return of the function
- *     However, the func return type is best to leave to Typescript to infer.
+ * 10. This function has no return statement.
+ *     Therefore, the type of its return is 'void' which it'd rather specify as ': void'.
+ *     Although the return value of this function is 'undefined'.
  */
 // =========================
 
