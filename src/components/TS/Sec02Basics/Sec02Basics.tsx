@@ -18,10 +18,15 @@ function printResult(num: number): void { // 10
 
 printResult(add(5, 12));
 
+let combineValues: Function = () => {}; // 11
+combineValues = add;
+console.log("combineValues():", combineValues(8, 8));
+
 /**
  * 10. This function has no return statement.
  *     Therefore, the type of its return is 'void' which it'd rather specify as ': void'.
  *     Although the return value of this function is 'undefined'.
+ * 11. Specify type 'Function' and initialize.
  */
 // =========================
 
